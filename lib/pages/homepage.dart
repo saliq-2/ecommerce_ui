@@ -1,5 +1,7 @@
 import 'package:ecommerce_ui/models/banner_list.dart';
 import 'package:ecommerce_ui/models/grid_view_list.dart';
+import 'package:ecommerce_ui/pages/dairy.dart';
+import 'package:ecommerce_ui/pages/fruits.dart';
 import 'package:flutter/material.dart';
 
 class homepage extends StatelessWidget
@@ -122,7 +124,15 @@ class homepage extends StatelessWidget
                   width: 100,
                   child: Column(
                     children: [
-                      Image.asset("assets/images/dairy-products.png",width:60 ,height: 60,),
+                      InkWell(
+
+                          child: Image.asset("assets/images/dairy-products.png",width:60 ,height: 60,),
+                        onTap: (){
+
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>dairy()));
+                          }
+
+                      ),
 
                       Padding(
                         padding: const EdgeInsets.all(8.0),
