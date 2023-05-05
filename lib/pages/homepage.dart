@@ -3,12 +3,16 @@ import 'package:ecommerce_ui/models/grid_view_list.dart';
 import 'package:ecommerce_ui/pages/dairy.dart';
 import 'package:ecommerce_ui/pages/fruits.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class homepage extends StatelessWidget
 {
+  int selected_index=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
 
       appBar: AppBar(
         backgroundColor: Colors.grey,
@@ -20,7 +24,10 @@ class homepage extends StatelessWidget
             child: Icon(Icons.notifications),
           ),
         ],
+
       ),
+
+
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -191,10 +198,10 @@ class homepage extends StatelessWidget
 
 
                       child: Column(
-                        
+
                         children: [
                           ClipRRect(
-                            
+
                             child: SizedBox(
 
                               child: Image.asset(grid_view_list().grid_items[index].ImagePath,
@@ -204,7 +211,7 @@ class homepage extends StatelessWidget
                               height: 170,
                             ),
 
-                            
+
                           ),
                           Container(
                             width: 405,
