@@ -10,6 +10,9 @@ class cart extends StatelessWidget
     return Consumer<dairy_list>(
       builder: (context,model_obj,child)=>
        Scaffold(
+         appBar: AppBar(
+
+         ),
          body: Container(
            //height: 600,
            //color: Colors.black,

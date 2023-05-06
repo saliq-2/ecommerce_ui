@@ -22,22 +22,7 @@ class dairy extends StatelessWidget
              },
            ),
          ),
-        bottomNavigationBar:
-        GNav(
-          activeColor: Colors.blue,
-          padding: EdgeInsets.all(20),
-          gap: 13,
-          tabs: [
-            GButton(icon: Icons.home,),
 
-            GButton(
-              icon: Icons.shopping_cart,onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>cart()));
-            },),
-            GButton(icon: Icons.person),
-
-          ],
-        ),
 
 
         body: Container(

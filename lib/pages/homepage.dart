@@ -1,13 +1,15 @@
 import 'package:ecommerce_ui/models/banner_list.dart';
 import 'package:ecommerce_ui/models/grid_view_list.dart';
+import 'package:ecommerce_ui/pages/cart.dart';
 import 'package:ecommerce_ui/pages/dairy.dart';
 import 'package:ecommerce_ui/pages/fruits.dart';
+import 'package:ecommerce_ui/pages/juice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class homepage extends StatelessWidget
 {
-  int selected_index=0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +119,12 @@ class homepage extends StatelessWidget
                   width: 100,
                   child: Column(
                     children: [
-                      Image.asset("assets/images/drink.png",width:60 ,height: 60,),
+                      InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>juice()));
+                            },
+                          child: Image.asset("assets/images/drink.png",width:60 ,height: 60,)
+                      ),
 
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -173,60 +180,61 @@ class homepage extends StatelessWidget
               child: Text("Popular",style: TextStyle(fontSize: 25),),
             ),
             Container(
-              width: 400,
-              height: 350,
-              child: GridView.builder(
+              
+              child: Expanded(
+                child: GridView.builder(
 
-                scrollDirection: Axis.vertical,
-                  itemCount: grid_view_list().grid_items.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
-                  childAspectRatio: 1/1.3
-                  //  mainAxisSpacing: 10,
-
-                  ),
-                  itemBuilder: (context,index)=>
-                  Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Container(
-                      // height: 50,
-                      // width: 40,
-                      decoration: BoxDecoration(
-                        //color: Colors.green,
-                        border: Border.all(color: Colors.lightGreenAccent,style: BorderStyle.solid),
-                        borderRadius: BorderRadius.circular(11),
-                      ),
-
-
-                      child: Column(
-
-                        children: [
-                          ClipRRect(
-
-                            child: SizedBox(
-
-                              child: Image.asset(grid_view_list().grid_items[index].ImagePath,
-
-                                fit: BoxFit.cover,
-                                alignment: Alignment.topCenter,),
-                              height: 170,
-                            ),
-
-
-                          ),
-                          Container(
-                            width: 405,
-                              height: 70,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(11),
-                                color: Colors.greenAccent.shade100,
-                              ),
-
-                              child: Text("data")),
-                        ],
-                      ),
+                  scrollDirection: Axis.vertical,
+                    itemCount: grid_view_list().grid_items.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                    childAspectRatio: 1/1.3
+                    //  mainAxisSpacing: 10,
 
                     ),
-                  )
+                    itemBuilder: (context,index)=>
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Container(
+                        // height: 50,
+                        // width: 40,
+                        decoration: BoxDecoration(
+                          //color: Colors.green,
+                          border: Border.all(color: Colors.lightGreenAccent,style: BorderStyle.solid),
+                          borderRadius: BorderRadius.circular(11),
+                        ),
+
+
+                        child: Column(
+
+                          children: [
+                            ClipRRect(
+
+                              child: SizedBox(
+
+                                child: Image.asset(grid_view_list().grid_items[index].ImagePath,
+
+                                  fit: BoxFit.cover,
+                                  alignment: Alignment.topCenter,),
+                                height: 170,
+                              ),
+
+
+                            ),
+                            Container(
+                              width: 405,
+                                height: 70,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(11),
+                                  color: Colors.greenAccent.shade100,
+                                ),
+
+                                child: Text("data")),
+                          ],
+                        ),
+
+                      ),
+                    )
+                ),
               ),
             )
 

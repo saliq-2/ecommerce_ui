@@ -1,4 +1,5 @@
 import 'package:ecommerce_ui/pages/homepage.dart';
+import 'package:ecommerce_ui/pages/selector_page.dart';
 import 'package:ecommerce_ui/product_lists/dairy_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget
     ],
 
 
-        child: MaterialApp(home: homepage(),)
+        child: MaterialApp(home: selector_page(),)
     );
   }
 }
