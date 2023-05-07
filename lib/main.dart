@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget
     ],
 
 
-        child: MaterialApp(home: selector_page(),)
+        child: MaterialApp(
+
+          home: selector_page(),)
     );
   }
 }

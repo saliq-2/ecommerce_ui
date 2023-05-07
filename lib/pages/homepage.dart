@@ -13,13 +13,29 @@ class homepage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        width: MediaQuery.of(context).size.width*0.4,
+        child: ListView(
+          children: [
+            DrawerHeader(child: CircleAvatar(
+              backgroundImage: AssetImage("assets/photo.jpg"),
+            )),
+            ListTile(
+              title: Text("Categories"),
+            ),
+            ListTile(
+              title: Text("Previous Orders"),
+            ),
+          ],
+        ),
+      ),
 
 
 
       appBar: AppBar(
         backgroundColor: Colors.grey,
         elevation: 0,
-        leading: Icon(Icons.list),
+       // leading: Icon(Icons.list),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -94,87 +110,130 @@ class homepage extends StatelessWidget
 
           Padding(
             padding: const EdgeInsets.only(right: 300),
-            child: Text("Categories"),
+            child: Text("Categories",style: TextStyle(fontWeight: FontWeight.bold),),
           ),
             SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Container(
-                  height: 100,
-                  width: 100,
-                  child: Column(
-                    children: [
-                      Image.asset("assets/images/fruits.png",width:60 ,height: 60,),
 
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text("Fruits"),
-                      )
-                    ],
-                  ),  
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  child: Column(
-                    children: [
-                      InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>juice()));
-                            },
-                          child: Image.asset("assets/images/drink.png",width:60 ,height: 60,)
-                      ),
+            Container(
+              height: 140,
+              child: ListView(
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.all(9),
+                children: [
+                  Container(
+                    height: 70,
+                    width: 100,
+                    child: Column(
+                      children: [
+                        CircleAvatar(
 
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text("Drinks"),
-                      )
-                    ],
+                            backgroundImage: AssetImage("assets/images/fruits1.jpg"),
+                          radius: 43,
+
+                        ),
+                        Text("Fruits"),
+
+                        // Padding(
+                        //   padding: const EdgeInsets.all(8.0),
+                        //   child: Text("Fruits"),
+                        // )
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  child: Column(
-                    children: [
-                      InkWell(
+                  Container(
+                    height: 70,
+                    width: 100,
+                    child: Column(
+                      children: [
+                        InkWell(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>juice()));
+                              },
+                            child: CircleAvatar(
 
-                          child: Image.asset("assets/images/dairy-products.png",width:60 ,height: 60,),
-                        onTap: (){
+                              backgroundImage: AssetImage("assets/images/juice1.jpg"),
+                              radius: 43,
 
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>dairy()));
-                          }
+                            ),
+                        ),
+                        Text("Juices"),
 
-                      ),
 
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text("Dairy"),
-                      )
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  child: Column(
-                    children: [
-                      Image.asset("assets/images/vegetable.png",width:60 ,height: 60,),
+                  Container(
+                    height: 70,
+                    width: 100,
+                    child: Column(
+                      children: [
+                        InkWell(
 
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text("Vegetable"),
-                      )
-                    ],
+                            child: CircleAvatar(
+
+                              backgroundImage: AssetImage("assets/images/dairy1.jpeg"),
+                              radius: 43,
+
+                            ),
+                          onTap: (){
+
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>dairy()));
+                            }
+
+                        ),
+                        Text("Dairy"),
+
+
+                      ],
+                    ),
                   ),
-                ),
+                  Container(
+                    height:70,
+                    width: 100,
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+
+                          backgroundImage: AssetImage("assets/images/veges.jpg"),
+                          radius: 43,
 
 
 
-                ],
+                        ),
+                        Text("Vegetables"),
+
+
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 70,
+                    color: Colors.blue,
+                    width: 100,
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+
+                          backgroundImage: AssetImage("assets/images/veges.jpg"),
+                          radius: 43,
+
+
+
+                        ),
+                        Text("Vegetables"),
+
+
+                      ],
+                    ),
+                  ),
+
+
+
+                  ],
+              ),
             ),
-            SizedBox(height: 20,),
+           // SizedBox(height: 20,),
             Padding(
               padding: const EdgeInsets.only(right: 320),
               child: Text("Popular",style: TextStyle(fontSize: 25),),

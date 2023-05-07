@@ -61,11 +61,14 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - assets/
     - assets/images/
     - assets/banner/images/
     - assets/gridviewimg/images/
     - assets/dairy/
     - assets/juices/
+    - assets/images/fruits1.jpg
+    - assets/images/dairy1.jpeg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

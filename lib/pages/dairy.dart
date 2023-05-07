@@ -5,9 +5,15 @@ import 'package:provider/provider.dart';
 
 import 'cart.dart';
 
-class dairy extends StatelessWidget
+class dairy extends StatefulWidget
 {
+  @override
+  State<dairy> createState() => _dairyState();
+}
+
+class _dairyState extends State<dairy> {
   //List page1=[cart()];
+  int total=10;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -18,6 +24,19 @@ class dairy extends StatelessWidget
            leading: IconButton(
                icon: Icon(Icons.shopping_cart),
              onPressed: (){
+               setState((){
+                 if(dairy_list().user_cart.length==0)
+                 {
+                   total=20;
+                 }
+                 else
+                 {
+
+                   total=total+10;
+
+                 }
+               }
+               );
                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>cart()));
              },
            ),
